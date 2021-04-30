@@ -1,13 +1,13 @@
 kind: LDAPSyncConfig
 apiVersion: v1
 url: ldaps://idm.ocp4.example.com
-bindDN: uid=ldap_user_for_sync,cn=users,cn=accounts,dc=example,dc=com
-bindPassword: ldap_user_for_sync_password
+bindDN: "uid=admin,cn=users,cn=accounts,dc=ocp4,dc=example,dc=com"
+bindPassword: "Redhat123@!"
 insecure: false
-ca: /path/to/ca.crt
+ca: /home/student/ca.crt
 rfc2307:
     groupsQuery:
-        baseDN: "cn=groups,cn=accounts,dc=example,dc=com"
+        baseDN: "cn=groups,cn=accounts,dc=ocp4,dc=example,dc=com"
         scope: sub
         derefAliases: never
         pageSize: 0
@@ -16,7 +16,7 @@ rfc2307:
     groupNameAttributes: [ cn ]
     groupMembershipAttributes: [ member ]
     usersQuery:
-        baseDN: "cn=accounts,dc=example,dc=com"
+        baseDN: "cn=accounts,dc=ocp4,dc=example,dc=com"
         scope: sub
         derefAliases: never
         pageSize: 0
